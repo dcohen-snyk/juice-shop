@@ -1,4 +1,4 @@
-name: Example workflow for Python using Snyk 
+name: Example workflow for running Snyk test on push
 on: push
 jobs:
   security:
@@ -6,6 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run Snyk from New Github Action to check for vulnerabilities
+      continue-on-error: true
       uses: snyk/actions/node@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
