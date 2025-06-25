@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+/* 
+ * New User Profile code
+*/
+
 const fs = require('fs')
 const models = require('../models/index')
 const utils = require('../lib/utils')
