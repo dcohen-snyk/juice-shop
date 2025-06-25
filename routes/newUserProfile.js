@@ -4,7 +4,7 @@
  */
 
 /* 
- * New User Profile code
+ * New User Profile code.  Hope it all works
 */
 
 const fs = require('fs')
