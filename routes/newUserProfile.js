@@ -3,10 +3,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-/* 
- * New User Profile code.  Hope it all works
-*/
-
 const fs = require('fs')
 const models = require('../models/index')
 const utils = require('../lib/utils')
@@ -55,7 +51,7 @@ module.exports = function getUserProfile () {
             'Content-Security-Policy': CSP
           })
 
-          res.contentType('application/json').send(fn(user.dataValues))
+          res.send(fn(user.dataValues))
         }).catch(error => {
           next(error)
         })
