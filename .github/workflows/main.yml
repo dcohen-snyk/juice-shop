@@ -1,0 +1,14 @@
+name: Example workflow for running Snyk test on push
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run Snyk from New Github Action to check for vulnerabilities
+      continue-on-error: true
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        args: --severity-threshold=high
